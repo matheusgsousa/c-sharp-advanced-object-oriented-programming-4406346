@@ -16,3 +16,5 @@ Console.WriteLine($"{Emp1}");
 Console.WriteLine($"{Emp2}");
 Console.WriteLine($"{Emp3}");
 Console.WriteLine($"{Emp4}");
+
+//var empl = new Employee();
