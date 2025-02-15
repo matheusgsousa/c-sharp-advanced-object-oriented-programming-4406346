@@ -12,4 +12,4 @@ result = Converter.CmToIn(5.0);
 Console.WriteLine($"{result}");
 
 // static classes cannot be instantiated
-// Converter conv = new Converter(); // this will cause a compiler error
+//Converter conv = new Converter(); // this will cause a compiler error

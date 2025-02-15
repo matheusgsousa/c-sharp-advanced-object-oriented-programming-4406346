@@ -2,16 +2,28 @@
 // Solution to the Employee Class challenge
 
 public class Employee {
-    public Employee() {}
+    private static int _empCount = 0;
+    protected static int IDStart;
+    public Employee() {
+        Employee._empCount++;
+        ID = Employee.IDStart++;
+    }
+    static Employee() {
+        IDStart = 1000;
+    }
 
-    public required int ID {get; init;}
+    public int ID {get; init;}
     public required string Department {get; set;}
     public required string FullName {get; set;}
 
     public virtual void AdjustPay(decimal percentage) {}
 
     public override string ToString() => $"{ID}:{FullName}, {Department} ";
+
+    public static int EmployeeCount {get => _empCount;}
+    
 }
+
 
 public class HourlyEmployee : Employee {
     public HourlyEmployee() {}
@@ -22,6 +34,7 @@ public class HourlyEmployee : Employee {
     {
         PayRate += (PayRate * percentage);
     }
+    
 }
 
 public class SalariedEmployee : Employee {
